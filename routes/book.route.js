@@ -7,4 +7,5 @@ router.get('/',controller.index);
 router.get('/liststore/all',controller.listStore);
 router.get('/:id/storename',controller.getStoreName);
 router.get('/:bookid/delete', controller.deleteBook);
+router.get('/list/search', controller.search);
 module.exports = router;

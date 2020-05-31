@@ -20,7 +20,6 @@ var cartRoute = require('./routes/cart.route');
 var checkUser= require('./middlewares/checkuser.middleware')
 var session= require('./middlewares/session.middleware')
 
-
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'));
 
@@ -32,6 +31,7 @@ app.use(session);
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false }))
 app.use(checkUser);
+
 
 
 app.use('/home', function(req, res){

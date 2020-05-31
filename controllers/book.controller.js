@@ -56,3 +56,18 @@ module.exports.deleteBook= async function(req, res) {
     await books.deleteOne({ bookId: bookId });
     res.redirect('back');
 }
+
+module.exports.search= async function(req, res) {
+    var name = req.query.name;
+    console.log(name);
+    var listbook = await books.find({});
+    console.log(listbook);
+    var list = listbook.filter(function(book) {
+        return book.title.indexOf(name) !==-1;
+    })
+    console.log(list);
+    
+    res.render('books/index', {
+        listbooks: list
+    });
+}

@@ -1,0 +1,8 @@
+extends ../layouts/navbar
+block content
+    h1 List all store
+    ul
+        each onestore in store
+            li
+                a(href="/book/"+onestore.userId)=onestore.storename
+            br

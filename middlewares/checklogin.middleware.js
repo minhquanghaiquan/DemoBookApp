@@ -10,6 +10,5 @@ module.exports.checkLogin = async function (req, res , next){
         res.redirect('/user/login');
         return;
     }
-    res.locals.user = user ;
     next();
 };

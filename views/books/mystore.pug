@@ -1,0 +1,24 @@
+extends ../layouts/navbar
+block content
+    h1='My Store '+store.storename
+    a(href="/book/"+user.id+"/storename") Edit your Store's name
+    each book in listbooks
+        ul
+            li=book.title
+            br
+            li=book.author
+            br
+            li=book.description
+            br
+            li=book.pageCount
+            br
+            li=book.pageCount
+            li
+                img(src=book.image width=400 height=560)
+            br
+            li  
+                a(href="/book/"+book.bookId+"/delete") Delete
+            
+         
+
+        

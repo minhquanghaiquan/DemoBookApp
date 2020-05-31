@@ -1,0 +1,22 @@
+html
+  head
+    link(rel="stylesheet",href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
+  body
+    ul.nav.justify-content-end
+      li.nav-item
+        a.nav-link.active(href='/home') Home
+      li.nav-item
+        a.nav-link.active(href='/book') Book
+      li.nav-item
+        a.nav-link(href='/user/profile') User
+      li.nav-item
+        a.nav-link(href='/book/liststore/all') Store
+      li.nav-item
+        a.nav-link(href='#')='Cart('+count+')'
+      if user
+        li.nav-item
+          b=user.name
+        li.bav-item
+          button
+            a(href='/logout') Log out
+    block content

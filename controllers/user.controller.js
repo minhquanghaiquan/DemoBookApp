@@ -63,7 +63,8 @@ module.exports.postNew = async function(req , res){
     pageCount: req.body.pageCount,
     description: req.body.description,
     image: req.body.image,
-    userId: userId
+    userId: userId,
+    bookId: Date.now()
   })
   const newbook = await book.save();
   res.redirect('/user/profile')

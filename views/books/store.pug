@@ -1,11 +1,19 @@
-h1 Danh sach book cua user
-each book in listbooks
-    ul
-        li=book.title
-        br
-        li=book.author
-        br
-        li
-            img(src=book.image width=64)
-        br
-    
+extends ../layouts/navbar
+block content
+    h1='Wellcom to Store '+store.storename
+    each book in listbooks
+        ul
+            li=book.title
+            br
+            li=book.author
+            br
+            li=book.description
+            br
+            li=book.pageCount
+            li
+                img(src=book.image width=400 height=560)
+            br
+            li
+                a(href="/cart/"+book.bookId) Add to cart
+         
+        

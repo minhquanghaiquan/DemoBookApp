@@ -1,24 +1,21 @@
 extends ../layouts/navbar
 block content
-    h1='My Store '+store.storename
+    h1='My Store '
     a(href="/book/"+user.id+"/storename") Edit your Store's name
-    each book in listbooks
-        ul
-            li=book.title
-            br
-            li=book.author
-            br
-            li=book.description
-            br
-            li=book.pageCount
-            br
-            li=book.pageCount
-            li
-                img(src=book.image width=400 height=560)
-            br
-            li  
-                a(href="/book/"+book.bookId+"/delete") Delete
-            
+    .container
+        .row
+            each book in listbooks
+                .card.text-center(style='max-width:350px')
+                    .col-sm
+                        .card-body
+                            img.card-img(src=book.image height=420)
+                            h5.card-title='Title: ' + book.title
+                            h5.card-title='Author: ' + book.author
+                            p.card-text=book.description
+                            p.card-text='Page Count '+book.pageCount
+                        .card-footer.text-muted
+                            a.btn.btn-primary(href="/cart/"+book.bookId)='Add to cart'
+                            a.btn.btn-primary(href="/book/"+book.bookId+"/delete") Delete
          
 
         

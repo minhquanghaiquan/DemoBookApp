@@ -6,6 +6,7 @@ router.get('/:id',controller.getStore);
 router.get('/',controller.index);
 router.get('/liststore/all',controller.listStore);
 router.get('/:id/storename',controller.getStoreName);
+router.post('/:id/storename',controller.postStoreName);
 router.get('/:bookid/delete', controller.deleteBook);
 router.get('/list/search', controller.search);
 module.exports = router;

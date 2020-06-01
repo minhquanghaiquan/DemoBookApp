@@ -1,4 +1,5 @@
 var users = require('../models/user.model.js');
+const session = require('../models/session.model');
 
 module.exports= async function (req, res , next){
     if (!req.signedCookies.userId) {
@@ -9,5 +10,9 @@ module.exports= async function (req, res , next){
         res.locals.user = {} ;
     }
     res.locals.user = user;
+    if (!req.signedCookies.sessionId) {
+        res.locals.count = 0 ;
+    }
+    
     next();
 };

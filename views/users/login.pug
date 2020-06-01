@@ -1,15 +1,28 @@
 extends ../layouts/navbar
 block content
-  h1 Login
-  if errors
-      each error in errors
-        .alert.alert-danger=error
-  form(action='/user/login', method='POST')
-    div
-      label(for='email') Email
-      input#email(type='email',name="email",value=values? values.email: '')
-    div
-      label(for='password') Password
-      input#password(type='password',name="password",value=values? values.password: '')
-    button(type='submit') Login
-  a(href='/user/register') Register
+  .container
+    .row
+      .col-sm-9.col-md-7.col-lg-5.mx-auto
+        .card.card-signin.my-5
+          .card-body
+            h3.card-title.text-center 
+              b Sign In
+            if errors
+              each error in errors
+                .alert.alert-danger=error
+            form.form-signin(action='/user/login', method='POST')
+              .form-label-group
+                label(for='inputEmail') Email address
+                input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='',name="email",value=values? values.email: '')
+              .form-label-group.mb-5
+                label(for='inputPassword') Password
+                input#inputPassword.form-control(type='password', placeholder='Password', required='',name="password",value=values? values.password: '')
+              button.btn.btn-lg.btn-primary.btn-block.text-uppercase.mb-5(type='submit') Sign in
+              a(href='/user/register') Register
+
+  
+
+
+
+  
+

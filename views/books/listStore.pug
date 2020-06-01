@@ -1,8 +1,7 @@
 extends ../layouts/navbar
 block content
     h1 List all store
-    ul
+    ul.list-group(style='max-width:500px')
         each onestore in store
-            li
+            li.list-group-item
                 a(href="/book/"+onestore.userId)=onestore.storename
-            br

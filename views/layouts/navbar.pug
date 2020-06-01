@@ -12,11 +12,12 @@ html
       li.nav-item
         a.nav-link(href='/book/liststore/all') Store
       li.nav-item
-        a.nav-link(href='#')='Cart'
+        a.nav-link(href='#')='Cart('+count+')'
       if user
-        li.nav-item
+        li.nav-item.pt-2.pr-3
           b=user.name
         li.bav-item
-          button
-            a(href='/logout') Log out
+          a.btn.btn-primary(href='/logout', role='button') Log out
     block content
+
+     

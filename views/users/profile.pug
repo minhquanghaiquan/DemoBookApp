@@ -1,9 +1,12 @@
 extends ../layouts/navbar
 block content
     h1 Information User
-    p=user.name
-    p=user.email
-
-    a(href="/book/"+userId) My Store
-    br
-    a(href="/user/new") Add New Book 
+    ul.list-group(style='max-width:500px')
+        li.list-group-item.list-group-item-primary
+            b=user.name
+        li.list-group-item.list-group-item-primary=user.email
+        li.list-group-item.list-group-item-primary
+            a(href="/book/"+userId) My Store
+        li.list-group-item.list-group-item-primary
+            a(href="/user/new") Add New Book 
+    

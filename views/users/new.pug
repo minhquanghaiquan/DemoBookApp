@@ -1,25 +1,34 @@
 extends ../layouts/navbar
 block content
-  h2.page-header New Book
-  if errors   
-      each error in errors
-          .alert.alert-danger= error
-  form(action='/user/new', method='POST', enctype="multipart/form-data")
-    .form-item
-      label Title
-      input(type='text', name='title')
-    .form-item
-      label Author
-      input(type='text', name='author')
-    .form-item
-      label Page Count
-      input(type='number', name='pageCount', min='1')
-    .form-item.form-item-no-grow
-      label Cover
-      input.book-cover.filepond(type='file', name='image')
-    .form-item
-      label Description
-      textarea(name='description')
-    .form-row.form-row-end.btn-row
-      a.btn.btn-danger(href='/user/profile') Cancel
-      button.btn.btn-primary(type='submit') Create
+  .container
+    .row
+      .col-sm-9.col-md-7.col-lg-5.mx-auto
+        .card.card-signin.my-5
+          .card-body
+            h3.card-title.text-center 
+              b NEW BOOK
+            if errors
+              each error in errors
+                .alert.alert-danger=error
+            form.form-signin(action='/user/new', method='POST', enctype="multipart/form-data")
+              .form-label-group
+                label Title
+                input(type='text', name='title')
+              .form-label-group
+                label Author
+                input(type='text', name='author')
+              .form-label-group
+                label Page Count
+                input(type='number', name='pageCount', min='1')
+              .form-label-group
+                label Cover
+                input.book-cover.filepond(type='file', name='image')
+              .form-label-group
+                label Description
+                textarea(name='description')
+              .form-label-group
+                label Page Count
+                input(type='number', name='pageCount', min='1')
+              .form-row.form-row-end.btn-row
+                a.btn.btn-danger(href='/user/profile') Cancel
+                button.btn.btn-primary(type='submit') Create

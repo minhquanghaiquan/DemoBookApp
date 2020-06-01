@@ -1,8 +1,8 @@
 extends ../layouts/navbar
 block content
   h1 Edit Your Store Name
-  form(action='/book/'+user.id+'/storename', method='POST')
-    div
-      label(for='storename') Store's Name
-      input#storename(type='text', name='storename', required='')
-    button(type='submit') Edit
+  form.form-inline(action='/book/'+user.id+'/storename', method='POST')
+    .form-group.mx-sm-3.mb-2
+      label.sr-only(for='storename') Store&apos;s name
+      input#storename.form-control(type='text', placeholder="store's name")
+    button.btn.btn-primary.mb-2(type='submit') Confirm

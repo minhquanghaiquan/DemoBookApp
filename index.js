@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
 //database
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/bookapp', 
+mongoose.connect(process.env.MONGODB_URI, 
                  {useNewUrlParser: true, 
                   useUnifiedTopology: true});
 mongoose.connection.on('connected', ()=>{

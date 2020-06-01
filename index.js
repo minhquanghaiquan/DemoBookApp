@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 require('dotenv').config()
 //database
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://heroku_m3v5mzb9:hh0jj74crf20e78fte8hhmkgl1@ds027495.mlab.com:27495/heroku_m3v5mzb9', 
+mongoose.connect('mongodb://heroku_qhnczkjx:ll612l9l6hkek0lpriuilqmdks@ds135760.mlab.com:35760/heroku_qhnczkjx', 
                  {useNewUrlParser: true, 
                   useUnifiedTopology: true});
 mongoose.connection.on('connected', ()=>{

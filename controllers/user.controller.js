@@ -55,9 +55,10 @@ module.exports.getNew = function(req , res){
   res.render('users/new.pug');
 };
 module.exports.postNew = async function(req , res){
-  var userId = req.signedCookies.userId;
-  req.body.image = req.file.path.split('\\').slice(2).join('/');
-  const book = new books({
+  try {
+    var userId = req.signedCookies.userId;
+    req.body.image = req.file.path.split('\\').slice(2).join('/');
+    const book = new books({
     title: req.body.title,
     author: req.body.author,
     pageCount: req.body.pageCount,
@@ -68,6 +69,11 @@ module.exports.postNew = async function(req , res){
   })
   const newbook = await book.save();
   res.redirect('/user/profile')
+  } catch (error) {
+    console.log(error);
+    res.redirect('/user/profile');
+  }
+  
 };
 
 module.exports.getProfile = async function(req , res){

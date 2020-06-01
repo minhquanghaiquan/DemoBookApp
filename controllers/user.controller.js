@@ -71,7 +71,6 @@ module.exports.postNew = async function(req , res){
   res.redirect('/user/profile')
   } catch (error) {
     console.log(error);
-    res.redirect('/user/profile');
   }
   
 };

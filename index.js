@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
+require('dotenv').config()
 //database
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI, 

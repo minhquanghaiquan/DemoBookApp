@@ -26,11 +26,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser("sdjdnjdnffkfmed1344"));
 app.use(session);
 app.use(express.static(__dirname + '/public'));
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: false }))
 app.use(checkUser);
 
 

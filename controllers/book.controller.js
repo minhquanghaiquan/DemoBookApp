@@ -32,7 +32,7 @@ module.exports.listStore= async function(req, res) {
     });
 }
 module.exports.getStoreName= function(req, res) {
-    res.render('books/storename');
+    res.render('books/storeName');
 }
 module.exports.postStoreName= async function(req, res) {
     var store = await stores.findOne({userId: req.signedCookies.userId});

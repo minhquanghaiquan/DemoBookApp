@@ -4,5 +4,5 @@ block content
   form.form-inline(action='/book/'+user.id+'/storename', method='POST')
     .form-group.mx-sm-3.mb-2
       label.sr-only(for='storename') Store&apos;s name
-      input#storename.form-control(type='text', placeholder="store's name")
+      input#storename.form-control(type='text', placeholder="store's name", name="storename")
     button.btn.btn-primary.mb-2(type='submit') Confirm

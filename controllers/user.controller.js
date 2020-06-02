@@ -55,12 +55,12 @@ module.exports.getNew = function(req , res){
 module.exports.postNew = async function(req , res){
   try {
     var userId = req.signedCookies.userId;
-    req.body.image = req.file.path.split(path.sep).slice(2).join('/');
+    req.body.image = req.file.path.split(path.sep).slice(1).join('/');
     const book = new books({
     title: req.body.title,
     author: req.body.author,
     pageCount: req.body.pageCount,
-    description: req.body.description,
+    description: '/'+req.body.description,
     image: req.body.image,
     userId: userId,
     bookId: Date.now()

@@ -5,7 +5,7 @@ var validate = require('../validate/user.validate');
 var checkLogin= require('../middlewares/checklogin.middleware')
 
 var multer = require('multer');
-var upload = multer({dest: './public/book/uploads'});
+var upload = multer({dest: './public/uploads'});
 
 
 

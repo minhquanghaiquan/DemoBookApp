@@ -1,9 +1,7 @@
 var users = require('../models/user.model.js');
 var books = require('../models/book.model.js');
 const bcrypt = require('bcrypt');
-
-
-
+const path = require('path');
 
 module.exports.getLogin = function(req , res){
     res.render('users/login.pug');
@@ -57,7 +55,7 @@ module.exports.getNew = function(req , res){
 module.exports.postNew = async function(req , res){
   try {
     var userId = req.signedCookies.userId;
-    req.body.image = req.file.path.split('\\').slice(2).join('/');
+    req.body.image = req.file.path.split(path.sep).slice(2).join('/');
     const book = new books({
     title: req.body.title,
     author: req.body.author,
